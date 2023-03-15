@@ -7,3 +7,12 @@ copiar los fuente .ttf en la carpeta de fonts. En mi caso era _~/.config/fonts_.
   ```
   fc-cache -f -v
   ```
+
+## null-ls
+
+Para instalar los formatos utilizados usar:
+
+- Formateo de python (autopep8): requirements.txt
+- Formateo de markdown (mdformat): requirements.txt
+- Formateo de vhdl (emacs_vhdl_mode): 
+- Formateo de verilog/systemverilog (verible_verilog_format):
