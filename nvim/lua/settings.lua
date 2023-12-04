@@ -6,12 +6,16 @@ local g = vim.g
 local opt = vim.opt
 
 -- General
-g.mapleader = ";"
+--g.mapleader = ";"
+g.mapleader = "."
 
 -- UI
 opt.number = true
 opt.relativenumber = true
 opt.guifont = "JetBrainsMono Nerd Font"
+
+-- clipboard
+opt.clipboard = "unnamedplus"
 
 -- Spell
 exec ([[

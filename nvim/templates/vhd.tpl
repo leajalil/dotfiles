@@ -18,8 +18,8 @@ entity {{FILENAME}} is
 	);
 	port (
 		--! generic input
-		clk_i               : in std_logic;
-		srst_i              : in std_logic
+		i_clk               : in std_logic;
+		i_srst              : in std_logic
 	);
 end {{FILENAME}};
 

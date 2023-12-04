@@ -4,6 +4,7 @@
 -- and plugins.
 -----------------------------------------------------------
 
+
 local map = vim.api.nvim_set_keymap
 local default_opts = {noremap = true, silent = true}
 local cmd = vim.cmd
@@ -42,13 +43,8 @@ map('n', '<C-l>', '<C-w>l', default_opts)
 -----------------------------------------------------------
 -- Applications & Plugins shortcuts:
 -----------------------------------------------------------
--- open terminal
-map('n', '<C-t>', ':Term<CR>', {noremap = true})
-map('t', '<C-w>h', '<C-\\><C-n><C-w>h', {noremap = true})
-map('t', '<C-w>j', '<C-\\><C-n><C-w>j', {noremap = true})
-map('t', '<C-w>k', '<C-\\><C-n><C-w>k', {noremap = true})
-map('t', '<C-w>l', '<C-\\><C-n><C-w>l', {noremap = true})
-map('t', '<C-w><C-w>', '<C-\\><C-n><C-w><C-w>', {noremap = true})
+-- toggleterm
+map('t', '<esc>', [[<C-\><C-n>]], default_opts)
 
 -- nvim-tree
 map('n', '<C-n>', ':Neotree toggle<CR>', default_opts)       -- open/close
