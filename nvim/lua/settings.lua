@@ -6,16 +6,23 @@ local g = vim.g
 local opt = vim.opt
 
 -- General
---g.mapleader = ";"
-g.mapleader = "."
+g.mapleader = " "
 
--- UI
+-- Neovim UI
 opt.number = true
 opt.relativenumber = true
+opt.colorcolumn = '80'
 opt.guifont = "JetBrainsMono Nerd Font"
-
--- clipboard
 opt.clipboard = "unnamedplus"
+
+-- Tabs, indent
+opt.expandtab = true      -- use spaces instead of tabs
+opt.shiftwidth = 4        -- shift 4 spaces when tab
+opt.tabstop = 4           -- 1 tab == 4 spaces
+opt.smartindent = true    -- autoindent new lines
+
+-- don't auto commenting new lines
+cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- Spell
 exec ([[
@@ -39,13 +46,3 @@ exec([[
   augroup END
 ]], false)
 
------------------------------------------------------------
--- Tabs, indent
------------------------------------------------------------
-opt.expandtab = true      -- use spaces instead of tabs
-opt.shiftwidth = 4        -- shift 4 spaces when tab
-opt.tabstop = 4           -- 1 tab == 4 spaces
-opt.smartindent = true    -- autoindent new lines
-
--- don't auto commenting new lines
-cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]

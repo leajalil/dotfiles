@@ -25,18 +25,21 @@ return require('packer').startup(function(use)
     -- colorschemes
     use 'Shatur/neovim-ayu'
 
-    -- file explorer
-    --use 'kyazdani42/nvim-tree.lua'
-    use {
-      'nvim-neo-tree/neo-tree.nvim',
-      branch = "v2.x",
-      requires = {
-        "nvim-lua/plenary.nvim",
-        "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim"
-      },
-    }
-    use 'sidebar-nvim/sidebar.nvim'
+    --file explorer option 1
+    --use {
+      --'nvim-neo-tree/neo-tree.nvim',
+      --branch = "v2.x",
+      --requires = {
+        --"nvim-lua/plenary.nvim",
+        --"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+        --"MunifTanjim/nui.nvim"
+      --},
+    --}
+    --use 'sidebar-nvim/sidebar.nvim'
+    
+    --file explorer option 2
+    use {'nvim-tree/nvim-tree.lua', requires = {'nvim-tree/nvim-web-devicons'}}
+
 
     --terminal
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -44,7 +47,7 @@ return require('packer').startup(function(use)
     end}
 
     --lsp
-    use 'jose-elias-alvarez/null-ls.nvim'
+    use 'neovim/nvim-lspconfig'
 
     --markdown preview (install without yarn or npm)
     use({
@@ -54,7 +57,18 @@ return require('packer').startup(function(use)
     
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
-    --editorconfig
-    use 'gpanders/editorconfig.nvim'
+
+    --which-key  (require "telescope",  "nerdcommenter"  and  "line align"
+    use {"folke/which-key.nvim"}
+
+    --line align
+    use 'junegunn/vim-easy-align'
+    
+    --telescope
+    use {'nvim-telescope/telescope.nvim',requires={'nvim-lua/plenary.nvim'}}
+    use 'nvim-telescope/telescope-file-browser.nvim'
+    
+    --nerdcommenter
+    use ({'preservim/nerdcommenter'})--, setup = function() vim.g.NERDCreateDefaultMappings = 0 end})
 
 end)

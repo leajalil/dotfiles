@@ -46,5 +46,8 @@ map('n', '<C-l>', '<C-w>l', default_opts)
 -- toggleterm
 map('t', '<esc>', [[<C-\><C-n>]], default_opts)
 
--- nvim-tree
-map('n', '<C-n>', ':Neotree toggle<CR>', default_opts)       -- open/close
+-- nvim-tree opcion 1
+--map('n', '<C-n>', ':Neotree toggle<CR>', default_opts)       -- open/close
+
+-- nvim-tree opcion 2
+map('n', '<C-n>', ':NvimTreeToggle <CR>', default_opts)       -- open/close
